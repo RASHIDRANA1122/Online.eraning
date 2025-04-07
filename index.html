@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script type="text/javascript">
+	atOptions = {
+		'key' : 'b6afa28ac7d1020e5fd61c06855d1230',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//geneindustriousbennet.com/b6afa28ac7d1020e5fd61c06855d1230/invoke.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Money Earning System</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hidden { display: none; }
+
+    .login-box {
+      background-color: white;
+      padding: 30px;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .login-box input {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .login-box button {
+      background-color: #00bcd4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #logout-btn {
+      background-color: #f44336;
+      color: white;
+      padding: 6px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: none;
+    }
+
+    .ad {
+      background-color: lightgreen;
+      margin: 10px;
+      padding: 15px;
+      width: 100px;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .withdraw-btn, .referral-section {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      margin: 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .withdrawal-form {
+      display: none;
+    }
+
+    .withdrawal-form input,
+    .withdrawal-form select {
+      margin: 10px 0;
+      padding: 10px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '84228ae6ea5d4c441e1eaa7b7a9f3f73',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//geneindustriousbennet.com/84228ae6ea5d4c441e1eaa7b7a9f3f73/invoke.js"></script>
+  <!-- LOGIN SECTION -->
+  <div id="login-section" class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="phone" placeholder="Enter Phone Number" />
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button onclick="fakeLogin()">Login</button>
+    <p id="login-error" style="color:red;"></p>
+    <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+  </div>
+
+  <!-- REGISTER SECTION -->
+  <div id="register-section" class="login-box hidden">
+    <h2>Register</h2>
+    <input type="text" id="reg-phone" placeholder="Enter Phone Number" />
+    <input type="password" id="reg-password" placeholder="Enter Password" />
+    <button onclick="registerUser()">Register</button>
+    <p id="register-error" style="color:red;"></p>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+<script type='text/javascript' src='//geneindustriousbennet.com/70/c9/f1/70c9f1c3e5c287d6a29d4e230ad2839c.js'></script>
+  <!-- LOGOUT BUTTON -->
+  <button id="logout-btn" onclick="logout()">Logout</button>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content" id="main-content" style="display:none;">
+    <div id="money-display">0.00 PKR</div>
+    <div id="ads-container"></div>
+
+    <button class="withdraw-btn" onclick="document.querySelector('.withdrawal-form').style.display='block'">Withdraw</button>
+
+    <div class="withdrawal-form">
+      <input type="text" id="account-name" placeholder="Account Name" />
+      <input type="text" id="account-number" placeholder="Account Number" />
+      <select id="payment-method">
+        <option value="" disabled selected>Select Payment Method</option>
+        <option value="JazzCash">JazzCash</option>
+        <option value="Easypaisa">Easypaisa</option>
+      </select>
+      <input type="number" id="amount" placeholder="Amount" />
+      <button onclick="confirmWithdraw()">Confirm Withdrawal</button>
+      <p id="withdraw-msg" style="color:red;"></p>
+    </div>
+
+    <div id="withdrawal-info" style="margin-top: 20px; display: none;">
+      <h3>Withdrawal Info:</h3>
+      <p><strong>Account Name:</strong> <span id="display-account-name"></span></p>
+      <p><strong>Account Number:</strong> <span id="display-account-number"></span></p>
+      <p><strong>Payment Method:</strong> <span id="display-payment-method"></span></p>
+      <p><strong>Amount:</strong> <span id="display-amount"></span> PKR</p>
+    </div>
+
+    <div class="referral-section">
+      <p>Your Referral Link:</p>
+      <input type="text" id="ref-link" readonly />
+      <p>Referral Earnings: <span id="referral-earnings">0.00 PKR</span></p>
+    </div>
+
+    <div class="whatsapp-help" style="margin-top: 40px;">
+      <h3>Need Help?</h3>
+      <p>If you did a withdrawal and didn’t get confirmation, contact us on WhatsApp:</p>
+      <a href="https://wa.me/923206691045" target="_blank" style="display:inline-block; padding:10px 20px; background-color:#25D366; color:white; border-radius:6px; text-decoration:none;">Contact WhatsApp Help Center</a>
+    </div>
+  </div>
+
+  <script>
+    // REGISTRATION
+    function showRegister() {
+      document.getElementById("login-section").style.display = "none";
+      document.getElementById("register-section").classList.remove("hidden");
+    }
+
+    function showLogin() {
+      document.getElementById("register-section").classList.add("hidden");
+      document.getElementById("login-section").style.display = "block";
+    }
+
+    function registerUser() {
+      const phone = document.getElementById("reg-phone").value;
+      const password = document.getElementById("reg-password").value;
+      const error = document.getElementById("register-error");
+
+      if (phone.length < 10 || password.length < 3) {
+        error.textContent = "Please enter valid phone and password.";
+        return;
+      }
+
+      localStorage.setItem("userPhone", phone);
+      localStorage.setItem("userPassword", password);
+      alert("Registration successful! You can now log in.");
+      showLogin();
+    }
+
+    // LOGIN SYSTEM
+    function fakeLogin() {
+      const phone = document.getElementById("phone").value;
+      const password = document.getElementById("password").value;
+      const error = document.getElementById("login-error");
+
+      const storedPhone = localStorage.getItem("userPhone");
+      const storedPassword = localStorage.getItem("userPassword");
+
+      if (phone === storedPhone && password === storedPassword) {
+        localStorage.setItem("loggedIn", "true");
+        showMain();
+      } else {
+        error.textContent = "Invalid credentials.";
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      location.reload();
+    }
+
+    function showMain() {
+      document.getElementById("login-section").style.display = "none";
+      document.getElementById("register-section").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      document.getElementById("logout-btn").style.display = "inline-block";
+    }
+
+    // MAIN SYSTEM
+    let totalMoney = parseFloat(localStorage.getItem("totalMoney")) || 0;
+    let referralEarnings = parseFloat(localStorage.getItem("referralEarnings")) || 0;
+
+    function updateDisplay() {
+      document.getElementById("money-display").textContent = totalMoney.toFixed(2) + " PKR";
+      document.getElementById("referral-earnings").textContent = referralEarnings.toFixed(2) + " PKR";
+      localStorage.setItem("totalMoney", totalMoney);
+      localStorage.setItem("referralEarnings", referralEarnings);
+    }
+
+    function confirmWithdraw() {
+      const name = document.getElementById("account-name").value;
+      const number = document.getElementById("account-number").value;
+      const method = document.getElementById("payment-method").value;
+      const amount = parseFloat(document.getElementById("amount").value);
+      const msg = document.getElementById("withdraw-msg");
+
+      const hasWithdrawnBefore = localStorage.getItem("hasWithdrawn") === "true";
+      const minAmount = hasWithdrawnBefore ? 100 : 5;
+
+      if (localStorage.getItem("withdrawalDone") === "true") {
+        msg.textContent = "You can only withdraw once per device.";
+        return;
+      }
+
+      if (!name || !number || !method || isNaN(amount)) {
+        msg.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      if (amount > totalMoney) {
+        msg.textContent = "Not enough balance.";
+        return;
+      }
+
+      if (amount < minAmount) {
+        msg.textContent = `Minimum withdrawal is ${minAmount} PKR.`;
+        return;
+      }
+
+      msg.textContent = "Withdrawal Requested! Please wait for payment.";
+      totalMoney -= amount;
+      updateDisplay();
+
+      localStorage.setItem("hasWithdrawn", "true");
+      localStorage.setItem("withdrawalDone", "true");
+      localStorage.setItem("accountName", name);
+      localStorage.setItem("accountNumber", number);
+      localStorage.setItem("paymentMethod", method);
+      localStorage.setItem("withdrawAmount", amount);
+
+      document.getElementById("display-account-name").textContent = name;
+      document.getElementById("display-account-number").textContent = number;
+      document.getElementById("display-payment-method").textContent = method;
+      document.getElementById("display-amount").textContent = amount;
+      document.getElementById("withdrawal-info").style.display = "block";
+    }
+
+    function generateReferralLink() {
+      const uid = Math.random().toString(36).substring(2, 10);
+      const link = `${window.location.href.split("?")[0]}?ref=${uid}`;
+      document.getElementById("ref-link").value = link;
+    }
+
+    function handleReferralBonus() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const ref = urlParams.get("ref");
+      if (ref && !localStorage.getItem("referred")) {
+        referralEarnings += 1;
+        totalMoney += 1;
+        localStorage.setItem("referred", "true");
+        updateDisplay();
+      }
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem("loggedIn") === "true") {
+        showMain();
+      }
+
+      generateReferralLink();
+      handleReferralBonus();
+      updateDisplay();
+
+      const savedName = localStorage.getItem("accountName");
+      const savedNumber = localStorage.getItem("accountNumber");
+      const savedMethod = localStorage.getItem("paymentMethod");
+      const savedAmount = localStorage.getItem("withdrawAmount");
+
+      if (savedName) document.getElementById("account-name").value = savedName;
+      if (savedNumber) document.getElementById("account-number").value = savedNumber;
+
+      if (savedName && savedNumber && savedMethod && savedAmount) {
+        document.getElementById("display-account-name").textContent = savedName;
+        document.getElementById("display-account-number").textContent = savedNumber;
+        document.getElementById("display-payment-method").textContent = savedMethod;
+        document.getElementById("display-amount").textContent = savedAmount;
+        document.getElementById("withdrawal-info").style.display = "block";
+      }
+
+      const adsContainer = document.getElementById("ads-container");
+      const now = Date.now();
+      const oneDay = 24 * 60 * 60 * 1000;
+
+      for (let i = 1; i <= 20; i++) {
+        const ad = document.createElement("div");
+        ad.className = "ad";
+        ad.textContent = "Ad " + i;
+
+        const adKey = `ad${i}-lastClick`;
+        const lastClick = localStorage.getItem(adKey);
+
+        if (lastClick && now - parseInt(lastClick) < oneDay) {
+          ad.style.backgroundColor = "#ccc";
+          ad.style.pointerEvents = "none";
+          ad.textContent += " (Wait)";
+        }
+
+        ad.addEventListener("click", () => {
+          const lastClick = localStorage.getItem(adKey);
+          const now = Date.now();
+
+          if (!lastClick || now - parseInt(lastClick) >= oneDay) {
+            totalMoney += 1;
+            updateDisplay();
+            localStorage.setItem(adKey, now.toString());
+            ad.style.backgroundColor = "#ccc";
+            ad.style.pointerEvents = "none";
+            ad.textContent = "Ad " + i + " (Wait)";
+          }
+        });
+
+        adsContainer.appendChild(ad);
+      }
+    }
+  </script>
+  
+  <script type="text/javascript">
+	atOptions = {
+		'key' : 'b6afa28ac7d1020e5fd61c06855d1230',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//geneindustriousbennet.com/b6afa28ac7d1020e5fd61c06855d1230/invoke.js"></script>
+</body>
+</html>
